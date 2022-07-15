@@ -13,15 +13,17 @@ categoriesRoutes.get("/all", (request, response) => {
 categoriesRoutes.post("/", (request, response) => {
     const { name, description } = request.body;
 
-    const category: Category = {
+    const category = new Category();
+
+    Object.assign(category, {
         name,
         description,
         create_at: new Date(),
-    };
+    });
 
     categories.push(category);
 
-    return response.status(201).send();
+    return response.status(201).json(category);
 });
 
 export { categoriesRoutes };
