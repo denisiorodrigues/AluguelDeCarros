@@ -8,7 +8,11 @@ class SpecificationsRepository implements ISpecificationsRepository {
     private specifications: Specification[];
 
     findByName(name: string): Specification {
-        throw new Error("Method not implemented.");
+        const specification = this.specifications.find(
+            (specification) => specification.name === name
+        );
+
+        return specification;
     }
 
     create({ name, description }: ICreateSpecificationDTO): void {
