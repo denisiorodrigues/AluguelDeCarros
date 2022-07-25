@@ -18,3 +18,9 @@ Adicionar o script abaixo no no _package.json_
 ```
 # Configuração no TypeScript
 Desabilitando (comentando a linha _"strict": true_) o strict do Typescript para gerenciar a checagem de erros, dexair o strict desabilitado parea o typescript gerenciar esses erros
+
+# Matando processos
+
+```shelscript 
+  fuser -k 3333/tcp
+```
