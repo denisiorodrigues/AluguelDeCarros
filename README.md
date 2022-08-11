@@ -2,7 +2,7 @@
 Uma aplicação de exemplo da trilha de nodeJs do ignite
 
 # Configuração ESLint
-Configuração do ESLint está no arquivo _ConfiguracaoEsLint.md_ na raiz do projeto
+Configuração do ESLint está no arquivo _ConfiguracaoEsLint.md_ na raiz do projeto, modelo do AIRBNB
 
 # Iniciando o servidor
 Adicionar o script abaixo no no _package.json_
