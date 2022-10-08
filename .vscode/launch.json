@@ -8,6 +8,7 @@
             "type": "node",
             "request": "attach",
             "name": "Launch Program",
+            "useWSL": true,
             "skipFiles": [
                 "<node_internals>/**"
             ],

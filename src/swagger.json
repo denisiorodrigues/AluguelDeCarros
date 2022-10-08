@@ -13,7 +13,7 @@
         "/categories" : {
             "post" : {
                 "tags" : ["Category"],
-                "sumary" : "Create a category",
+                "summary" : "Create a category",
                 "description" : "Create a new Category",
                 "requestBody": {
                     "content" : {
@@ -29,8 +29,8 @@
                                     }
                                 },
                                 "exemple" : {
-                                    "name" : "category name sample",
-                                    "description" : "category description sample"
+                                    "name" : "SUV",
+                                    "description" : "Utilitário esportivo"
                                 }
                             }
                         }
@@ -38,16 +38,31 @@
                 },
                 "responses" : {
                     "201" : {
-                        "description" : "Created"
+                        "description" : "Usuário criado"
                     },
-                    "500" : {
-                        "description" : "Category already exists"
+                    "400" : {
+                        "description" : "Usuário já existe",
+                        "content" :{
+                            "application/json" : {
+                                "schema" : {
+                                    "type": "object",
+                                    "properties" : {
+                                        "error" : {
+                                            "type" : "string"
+                                        }
+                                    },
+                                    "example" : {
+                                        "Error" : "Category Alredy exists!"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             },
             "get" : {
                 "tags" : ["Category"],
-                "sumary" : "List all categories",
+                "summary" : "List all categories",
                 "description" : "Listing all categories",
                 "responses" : {
                     "200" : {
@@ -65,14 +80,128 @@
                                             "description" :{
                                                 "type" : "string"
                                             }
-                                        }
+                                        },
+                                        "exemple" : [
+                                        {
+                                            "id": "80d4da02-5832-4381-a0a2-10ad7e908dc0",
+                                            "name": "SUV",
+                                            "description": "Utilitário esportivo",
+                                            "create_at": "2022-10-06T17:50:48.942Z"
+                                        },
+                                        {
+                                            "id": "99d4da02-5832-4381-a0a2-10ad7e908dc0",
+                                            "name": "Sedan",
+                                            "description": "Automóvel de três volumes",
+                                            "create_at": "2022-10-06T17:50:48.942Z"
+                                        }]
                                     }
                                 }
                             }
                         }
                     },
+                    "400" : {
+                        "description" : "Erro ao listar todas as categorias ",
+                        "content" :{
+                            "application/json" : {
+                                "schema" : {
+                                    "type": "object",
+                                    "properties" : {
+                                        "error" : {
+                                            "type" : "string"
+                                        }
+                                    },
+                                    "example" : {
+                                        "Error" : "You nedd to be a administrator to list all users"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/categories/import" : {
+            "post" : {
+                "tags" : ["Category"],
+                "summary" : "Imporar categorias via arquivo CSV",
+                "description" : "Importar uma lista de categorias via arquivo CSV",
+                "requestBody" : {
+                    "content" :{
+                        "multipart/form-data" : {
+                            "schema": {
+                                "properties": {
+                                    "file": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "format": "binary"
+                                        }
+                                    }
+                                },
+                                "example" : {
+                                    "file" : ["U1VWLFV0aWxpdMOhcmlvIGVzcG9ydGl2bw0KU2VkYW4sQXV0b23Ds3ZlbCBkZSB0csOqcyB2b2x1bWVzDQpIYXRjaCxDYXJybyBjdXJ0bw0K"]
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses" : {
+                    "200" : {
+                        "description" : "Arquivo importando com sucesso"
+                    },
                     "500" : {
-                        "description" : "Erro interno"
+                        "description" : "Erro na importação"
+                    }
+                 }
+            }
+        },
+        "specifications" : {
+            "post" : {
+                "tags" : ["Specification"],
+                "summary" : "Criar uma nova especificação",
+                "description" : "Criar uma nova especificação",
+                "requestBody": {
+                    "content" : {
+                        "application/json" : {
+                            "schema" : {
+                                "type" : "object",
+                                "properties" : {
+                                    "name" : {
+                                        "type" : "string"
+                                    },
+                                    "description" : {
+                                        "type" : "string"
+                                    }
+                                },
+                                "exemple" : {
+                                    "name" : "SUV",
+                                    "description" : "Utilitário esportivo"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses" : {
+                    "201" : {
+                        "description" : "Especificação criada com sucesso"
+                    },
+                    "400" : {
+                        "description" : "Especificação já existe",
+                        "content" :{
+                            "application/json" : {
+                                "schema" : {
+                                    "type": "object",
+                                    "properties" : {
+                                        "error" : {
+                                            "type" : "string"
+                                        }
+                                    },
+                                    "example" : {
+                                        "Error" : "Speficication already exists!"
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }
