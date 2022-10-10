@@ -24,3 +24,7 @@ Desabilitando (comentando a linha _"strict": true_) o strict do Typescript para 
 ```shelscript 
   fuser -k 3333/tcp
 ```
+
+# ORM
+
+Usando o ORM *TypeORM* (https://typeorm.io/)
