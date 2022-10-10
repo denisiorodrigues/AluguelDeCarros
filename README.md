@@ -28,3 +28,17 @@ Desabilitando (comentando a linha _"strict": true_) o strict do Typescript para 
 # ORM
 
 Usando o ORM *TypeORM* (https://typeorm.io/)
+Criar a migration
+```
+  yarn typeorm migration:create <NOME DA MIGRATION>
+```
+
+Depois de configurada, vamos executar todas as migrations pendentes
+```
+  yarn typeorm migration:run
+```
+
+Desfazer as alterações
+```
+  yarn typeorm migration:revert
+```
