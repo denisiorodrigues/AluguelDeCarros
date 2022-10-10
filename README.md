@@ -25,6 +25,32 @@ Desabilitando (comentando a linha _"strict": true_) o strict do Typescript para 
   fuser -k 3333/tcp
 ```
 
+# Docker
+Subir a aplicação com docker compose
+```
+  docker-compose up
+```
+
+PARAR a aplicação com docker compose
+```
+  docker-compose stop
+```
+
+RESTARTAR a aplicação com docker compose
+```
+  docker-compose start
+```
+
+PARAR DELETANDO os container
+```
+  docker-compose down
+```
+
+Verificar os logs em um containre
+```
+  docker logs <NOME DO CONTAINER> -f
+```
+
 # ORM
 
 Usando o ORM *TypeORM* (https://typeorm.io/)
