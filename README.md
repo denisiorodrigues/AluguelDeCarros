@@ -19,6 +19,18 @@ Adicionar o script abaixo no no _package.json_
 # Configuração no TypeScript
 Desabilitando (comentando a linha _"strict": true_) o strict do Typescript para gerenciar a checagem de erros, dexair o strict desabilitado parea o typescript gerenciar esses erros
 
+Se for executar aaplicação  no WSL2 adicionar a configuração ** no script de execução.
+Como por exemplo:
+
+```
+"scripts": {
+    "start": "CHOKIDAR_USEPOLLING=true react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  }
+```
+
 # Matando processos
 
 ```shelscript 
