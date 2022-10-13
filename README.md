@@ -58,9 +58,21 @@ PARAR DELETANDO os container
   docker-compose down
 ```
 
-Verificar os logs em um containre
+Verificar os logs em um container
 ```
   docker logs <NOME DO CONTAINER> -f
+```
+
+## Erro no Docker no WSL (Iniciar o docker)
+
+Iniciar o processo do dokcer que está parado 
+```
+  sudo service docker start
+```
+
+Conceder permissão as pastas do docker quando iniciar o processo(_adicionar no arquivo de configuração do bash do linux do wsl_)
+```
+  chmod 777 /var/run/docker.sock
 ```
 
 # ORM
