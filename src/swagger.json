@@ -129,33 +129,28 @@
                     "content" :{
                         "multipart/form-data" : {
                             "schema": {
+                                "type" :"object",
                                 "properties": {
                                     "file": {
-                                        "type": "array",
-                                        "items": {
-                                            "type": "string",
-                                            "format": "binary"
-                                        }
+                                        "type": "string",
+                                        "format": "binary"
                                     }
-                                },
-                                "example" : {
-                                    "file" : ["U1VWLFV0aWxpdMOhcmlvIGVzcG9ydGl2bw0KU2VkYW4sQXV0b23Ds3ZlbCBkZSB0csOqcyB2b2x1bWVzDQpIYXRjaCxDYXJybyBjdXJ0bw0K"]
                                 }
                             }
                         }
                     }
                 },
                 "responses" : {
-                    "200" : {
-                        "description" : "Arquivo importando com sucesso"
+                    "201" : {
+                        "description" : "Created"
                     },
                     "500" : {
-                        "description" : "Erro na importação"
+                        "description" : "Error"
                     }
                  }
             }
         },
-        "specifications" : {
+        "/specifications" : {
             "post" : {
                 "tags" : ["Specification"],
                 "summary" : "Criar uma nova especificação",
@@ -164,19 +159,7 @@
                     "content" : {
                         "application/json" : {
                             "schema" : {
-                                "type" : "object",
-                                "properties" : {
-                                    "name" : {
-                                        "type" : "string"
-                                    },
-                                    "description" : {
-                                        "type" : "string"
-                                    }
-                                },
-                                "exemple" : {
-                                    "name" : "SUV",
-                                    "description" : "Utilitário esportivo"
-                                }
+                                "$ref" : "#/definitions/Specification"
                             }
                         }
                     }
@@ -204,6 +187,24 @@
                         }
                     }
                 }
+            }
+        }
+    },
+    "definitions" : {
+        "Specification" : {
+            "type" : "object",
+            "properties" : {
+                "name" : {
+                    "type" :"string"
+                },
+                "description" : {
+                    "type" :"string"
+                }
+            },
+            "required" : ["name"],
+            "exemple" : {
+                "name" : "Arrancada",
+                "description" : "Utilitario esportivo"
             }
         }
     }
