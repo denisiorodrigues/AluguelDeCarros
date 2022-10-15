@@ -12,7 +12,6 @@ class UsersRepository implements IUsersRepository {
     async create( { name, username, password, email, driver_license } ): Promise<void> {
         const user = this.respository.create({ 
             name, 
-            username,
             password, 
             email, 
             driver_license 
