@@ -30,6 +30,21 @@ Como por exemplo:
     "eject": "react-scripts eject"
   }
 ```
+# COnfiguração Teste (JEST)
+Vamos adicionar o Jest e suas tipagem no ambiente de desenvolvimento
+
+```
+  yarn add jest @types/jest -D
+```
+
+Adicionar o ts-jest como preset para trabalhar com typescript
+```
+  yarn add ts-jest -D
+```
+
+Alterar o *jest.config.ts* e descomentar a configuração do preset e trocar o *undefined* para *ts-jest*
+
+*TestMatch* serve para configurar a organização das pastas de teste, onde o jest deve buscar os arquivos de teste.
 
 # Matando processos
 
