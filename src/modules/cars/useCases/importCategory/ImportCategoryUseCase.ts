@@ -1,8 +1,8 @@
 import { inject, injectable } from "tsyringe";
 import { parse } from "csv-parse";
 import fs from "fs";
+import { ICategoriesRepository } from "@modules/cars/repositories/ICategoriesRepository";
 
-import { ICategoriesRepository } from "../../repositories/ICategoriesRepository";
 
 interface IImportCategory {
     name: string;
