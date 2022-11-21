@@ -1,8 +1,9 @@
 import { Request, Response } from "express"
 import { NextFunction } from "express";
 import { verify } from "jsonwebtoken";
-import { AppErros } from "../errors/AppErrors";
-import { UsersRepository } from "../modules/accounts/repositories/implementations/UsersRepository";
+
+import { AppErros } from "@shared/errors/AppErrors";
+import { UsersRepository } from "@modules/accounts/infra/typeorm/repositories/UsersRepository";
 
 interface IPayLoad {
     sub: string;

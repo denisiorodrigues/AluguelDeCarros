@@ -1,7 +1,7 @@
 
 import { hash } from "bcryptjs" 
 import { inject, injectable } from "tsyringe";
-import { AppErros } from "@errors/AppErrors";
+import { AppErros } from "@shared/errors/AppErrors";
 import { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import { ICreateUserDTO } from "@modules/accounts/dtos/ICreateUserDTO";
 
